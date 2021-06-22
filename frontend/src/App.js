@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import Movies from "./components/movies/Movies";
+import Header from "./components/header/Header";
 import "./App.css";
 
 const App = () => {
@@ -20,7 +22,17 @@ const App = () => {
 			.catch();
 	}, []);
 
-	return <div>hello App</div>;
+	return (
+		<div>
+			<div>
+				<Header />
+			</div>
+
+			<div>
+				<Movies />
+			</div>
+		</div>
+	);
 };
 
 export default App;
