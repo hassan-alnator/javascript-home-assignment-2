@@ -16,7 +16,7 @@ const App = () => {
 				},
 			})
 			.then((response) => {
-				console.log("response from Axios.get Movies", response);
+				// console.log("response from Axios.get Movies", response);
 				setMovies(response.data);
 			})
 			.catch();
@@ -29,7 +29,7 @@ const App = () => {
 			</div>
 
 			<div>
-				<Movies />
+				<Movies movies={movies} />
 			</div>
 		</div>
 	);
