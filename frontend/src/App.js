@@ -29,7 +29,7 @@ const App = () => {
 			</div>
 
 			<div>
-				<Movies movies={movies} />
+				<Movies movies={movies.movies} />
 			</div>
 		</div>
 	);
