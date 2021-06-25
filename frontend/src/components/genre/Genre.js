@@ -4,6 +4,7 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Image from "react-bootstrap/Image";
+import Movies from "../movies/Movies";
 
 const Genre = ({ movies }) => {
 	console.log("Genre Component", movies);
@@ -11,17 +12,7 @@ const Genre = ({ movies }) => {
 		<div>
 			<Container>
 				Genre 1
-				<Row md={5}>
-					{movies &&
-						movies.map((element, index) => {
-							// console.log(element.poster, index);
-							return (
-								<Col key={index}>
-									<Image variant="top" src={element.poster} />
-								</Col>
-							);
-						})}
-				</Row>
+				<Movies movies={movies} />
 			</Container>
 			{/* <ListGroup horizontal>
 				<ListGroup.Item>This</ListGroup.Item>

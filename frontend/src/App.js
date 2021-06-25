@@ -34,11 +34,11 @@ const App = () => {
 			<div>
 				<Header />
 			</div>
-			<div>{/* <Genre movies={movies.movies} /> */}</div>
-
 			<div>
-				<Movies movies={movies.movies} />
+				<Genre movies={movies.movies} />
 			</div>
+
+			<div>{/* <Movies movies={movies.movies} /> */}</div>
 		</div>
 	);
 };
