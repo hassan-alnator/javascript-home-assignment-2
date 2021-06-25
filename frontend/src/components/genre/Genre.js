@@ -3,7 +3,7 @@ import ListGroup from "react-bootstrap/ListGroup";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-// import Img from "react-bootstrap/Img";
+import Image from "react-bootstrap/Image";
 
 const Genre = ({ movies }) => {
 	console.log("Genre Component", movies);
@@ -11,13 +11,13 @@ const Genre = ({ movies }) => {
 		<div>
 			<Container>
 				Genre 1
-				<Row>
+				<Row md={5}>
 					{movies &&
 						movies.map((element, index) => {
 							// console.log(element.poster, index);
 							return (
-								<Col key={index} style={{ width: "18rem" }}>
-									<img variant="top" src={element.poster} />
+								<Col key={index}>
+									<Image variant="top" src={element.poster} />
 								</Col>
 							);
 						})}
