@@ -6,14 +6,20 @@ import Col from "react-bootstrap/Col";
 import Image from "react-bootstrap/Image";
 import Movies from "../movies/Movies";
 
-const Genre = ({ movies }) => {
-	console.log("Genre Component", movies);
+const Genre = ({ movies, genres }) => {
+	console.log("Genre Component", genres);
 	return (
 		<div>
-			<Container>
-				Genre 1
-				<Movies movies={movies} />
-			</Container>
+			{genres &&
+				genres.map((element, index) => {
+					console.log("element", element);
+					return (
+						<Container>
+							{element}
+							<Movies movies={movies} />
+						</Container>
+					);
+				})}
 			{/* <ListGroup horizontal>
 				<ListGroup.Item>This</ListGroup.Item>
 				<ListGroup.Item>ListGroup</ListGroup.Item>

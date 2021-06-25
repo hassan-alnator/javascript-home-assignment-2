@@ -6,6 +6,7 @@ import "./App.css";
 
 const App = () => {
 	const [movies, setMovies] = useState([]);
+	const [arrayOfGenre, setArrayOfGenre] = useState([]);
 	const axios = require("axios").default;
 
 	//useEffect works as componentDidMount in class components.
@@ -20,6 +21,8 @@ const App = () => {
 			//handling the request response if response was 202 ( accepted )
 			.then((response) => {
 				setMovies(response.data);
+				getGenre(response.data.movies);
+				// console.log(arrayOfGenre);
 			})
 			//handling server/request errors with catch block
 			.catch((error) => {
@@ -29,13 +32,23 @@ const App = () => {
 			});
 	}, []);
 
+	const getGenre = (objectOfMovies) => {
+		// console.log(objectOfMovies);
+		if (objectOfMovies) {
+			objectOfMovies.map((element, index) => {
+				// console.log(element);
+				arrayOfGenre.push(element.genres[0]);
+			});
+		}
+	};
+
 	return (
 		<div>
 			<div>
 				<Header />
 			</div>
 			<div>
-				<Genre movies={movies.movies} />
+				<Genre movies={movies.movies} genres={arrayOfGenre} />;
 			</div>
 
 			<div>{/* <Movies movies={movies.movies} /> */}</div>

@@ -4,7 +4,7 @@ import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 
 const Movies = ({ movies }) => {
-	console.log(movies);
+	// console.log(movies);
 
 	return (
 		<div>
