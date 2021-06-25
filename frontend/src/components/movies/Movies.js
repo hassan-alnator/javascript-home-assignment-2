@@ -8,14 +8,14 @@ const Movies = ({ movies }) => {
 
 	return (
 		<div>
-			<Row xs={2} md={6} className="g-2">
+			<Row xs={true}>
 				{movies &&
 					movies.map((element, index) => {
 						// console.log(element.poster, index);
 						return (
-							<Col>
+							<Col xs={true}>
 								<Card
-									className="mb-3 ml-3"
+									// className="mb-3 ml-3"
 									key={index}
 									style={{ width: "10rem" }}
 								>
