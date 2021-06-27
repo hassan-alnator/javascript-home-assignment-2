@@ -36,8 +36,10 @@ const App = () => {
 		// console.log(objectOfMovies);
 		if (objectOfMovies) {
 			objectOfMovies.map((element, index) => {
-				// console.log(element);
-				arrayOfGenre.push(element.genres[0]);
+				console.log(element);
+				if (!arrayOfGenre.includes(element)) {
+					arrayOfGenre.push(element.genres[0]);
+				}
 			});
 		}
 	};
