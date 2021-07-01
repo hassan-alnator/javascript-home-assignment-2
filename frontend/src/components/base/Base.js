@@ -12,13 +12,8 @@ const BaseComponent = () => {
 		moviesServices
 			.getMovies()
 			.then((response) => {
-				// console.log("response", response.data.movies);
 				setMovies(response);
-				// console.log(response);
-				// console.log(uniqueGenre(response.data));
 				setGenreArray(uniqueGenre(response.data));
-				// console.log("movies ", movies.data);
-				// movies && console.log("hi", movies);
 			})
 			.catch((error) => {
 				throw error;
