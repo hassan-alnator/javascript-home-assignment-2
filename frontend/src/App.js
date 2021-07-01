@@ -1,27 +1,25 @@
+//Axios get movies.DONE
 import React, { useState, useEffect } from "react";
-// import Movies from "./components/movies/Movies";
 import Header from "./components/header/Header";
-import Genre from "./components/genre/Genre";
-import "./App.css";
 import moviesServices from "./services/moviesServices";
+import "./App.css";
 
 const App = () => {
 	const [movies, setMovies] = useState([]);
 	// const [arrayOfGenre, setArrayOfGenre] = useState([]);
-	// const axios = require("axios").default;
 
-	//useEffect works as componentDidMount in class components.
 	//!! Clean App.js
-	//Axios get movies.
 	//Search
 	//image-lazy-component || lazy load
 
+	//useEffect works as componentDidMount in class components.
 	useEffect(() => {
 		moviesServices
 			.getMovies()
 			.then((response) => {
+				console.log("response", response);
 				setMovies(response);
-				console.log(movies);
+				movies && console.log("hi", movies);
 			})
 			.catch((error) => {
 				throw error;
@@ -70,9 +68,7 @@ const App = () => {
 			<div>
 				<Header />
 			</div>
-			<div>
-				<Genre movies={movies.movies} genres={arrayOfGenre} />;
-			</div>
+			<div>{/* <Genre movies={movies.movies} genres={arrayOfGenre} />; */}</div>
 
 			<div>{/* <Movies movies={movies.movies} /> */}</div>
 		</div>
