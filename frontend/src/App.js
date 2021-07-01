@@ -1,11 +1,9 @@
 //Axios get movies.DONE
-import React, { useState, useEffect } from "react";
-import Header from "./components/header/Header";
-import moviesServices from "./services/moviesServices";
+import React from "react";
+import BaseComponent from "./components/base/Base";
 import "./App.css";
 
 const App = () => {
-	const [movies, setMovies] = useState([]);
 	// const [arrayOfGenre, setArrayOfGenre] = useState([]);
 
 	//!! Clean App.js
@@ -13,18 +11,6 @@ const App = () => {
 	//image-lazy-component || lazy load
 
 	//useEffect works as componentDidMount in class components.
-	useEffect(() => {
-		moviesServices
-			.getMovies()
-			.then((response) => {
-				console.log("response", response);
-				setMovies(response);
-				movies && console.log("hi", movies);
-			})
-			.catch((error) => {
-				throw error;
-			});
-	}, []);
 	// useEffect(() => {
 	// 	//Using Axios to fetch data from server API passing authorization key in headers with the request.
 	// 	axios
@@ -66,11 +52,8 @@ const App = () => {
 	return (
 		<div>
 			<div>
-				<Header />
+				<BaseComponent />
 			</div>
-			<div>{/* <Genre movies={movies.movies} genres={arrayOfGenre} />; */}</div>
-
-			<div>{/* <Movies movies={movies.movies} /> */}</div>
 		</div>
 	);
 };
