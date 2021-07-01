@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import moviesServices from "../../services/moviesServices";
+import Genre from "../../parts/genre/Genre";
 import Header from "../header/Header";
 
 const BaseComponent = () => {
@@ -23,7 +24,9 @@ const BaseComponent = () => {
 			<div>
 				<Header />
 			</div>
-			<div>Hello Base Component</div>
+			<div>
+				<Genre movies={movies} />
+			</div>
 		</div>
 	);
 };

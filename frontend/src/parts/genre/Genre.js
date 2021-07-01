@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Container from "react-bootstrap/Container";
-import Movies from "../movies/Movies";
+import Movies from "../../parts/movies/Movies";
 
 const Genre = ({ movies, genres }) => {
 	console.log("Genre Component", genres);
