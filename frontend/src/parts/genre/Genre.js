@@ -1,18 +1,24 @@
 import React, { useState, useEffect } from "react";
 import Container from "react-bootstrap/Container";
 import Movies from "../../parts/movies/Movies";
+import { uniqueGenre } from "../../helpers/genreExtractor";
+const Genre = ({ movies, genreArray }) => {
+	const [genres, setGenres] = useState();
+	useEffect(() => {
+		setGenres(genreArray);
+		console.log(genres);
+	}, [movies]);
 
-const Genre = ({ movies, genres }) => {
-	console.log("Genre Component", genres);
+	//pass element to movies component
 	return (
 		<div>
 			{genres &&
+				//implement helper function // DONE
 				genres.map((element, index) => {
-					console.log("element", element);
 					return (
-						<Container>
+						<Container key={index}>
 							{element}
-							<Movies movies={movies} />
+							{/* <Movies movies={movies} /> */}
 						</Container>
 					);
 				})}
