@@ -3,9 +3,10 @@ import React, { useState, useEffect } from "react";
 import Header from "./components/header/Header";
 import Genre from "./components/genre/Genre";
 import "./App.css";
+import moviesServices from "./services/moviesServices";
 
 const App = () => {
-	// const [movies, setMovies] = useState([]);
+	const [movies, setMovies] = useState([]);
 	// const [arrayOfGenre, setArrayOfGenre] = useState([]);
 	// const axios = require("axios").default;
 
@@ -15,6 +16,17 @@ const App = () => {
 	//Search
 	//image-lazy-component || lazy load
 
+	useEffect(() => {
+		moviesServices
+			.getMovies()
+			.then((response) => {
+				setMovies(response);
+				console.log(movies);
+			})
+			.catch((error) => {
+				throw error;
+			});
+	}, []);
 	// useEffect(() => {
 	// 	//Using Axios to fetch data from server API passing authorization key in headers with the request.
 	// 	axios
