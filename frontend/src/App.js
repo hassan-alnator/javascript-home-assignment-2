@@ -1,60 +1,31 @@
-//Axios get movies.DONE
+//Search
+//image-lazy-component || lazy load
 import React from "react";
+import { BrowserRouter, Link, Route, Switch } from "react-router-dom";
 import BaseComponent from "./components/base/Base";
+import Details from "./parts/details/details";
 import "./App.css";
 
 const App = () => {
-	// const [arrayOfGenre, setArrayOfGenre] = useState([]);
-
-	//!! Clean App.js
-	//Search
-	//image-lazy-component || lazy load
-
-	//useEffect works as componentDidMount in class components.
-	// useEffect(() => {
-	// 	//Using Axios to fetch data from server API passing authorization key in headers with the request.
-	// 	axios
-	// 		.get("https://wookie.codesubmit.io/movies", {
-	// 			headers: {
-	// 				Authorization: "Bearer Wookie2021",
-	// 			},
-	// 		})
-	// 		//handling the request response if response was 202 ( accepted )
-	// 		.then((response) => {
-	// 			setMovies(response.data);
-	// 			// getGenre(response.data.movies);
-	// 			// console.log(arrayOfGenre);
-	// 		})
-	// 		//handling server/request errors with catch block
-	// 		.catch((error) => {
-	// 			if (error) {
-	// 				console.error(error);
-	// 			}
-	// 		});
-	// }, []);
-
-	// var filteringGenres = (oneObject) => {
-	// 	console.log(oneObject);
-	// 	if (oneObject.genres) {
-	// 		return oneObject.genres[0];
-	// 	}
-	// 	return false;
-	// };
-	// //use React state
-	// const getGenre = (objectOfMovies) => {
-	// 	if (objectOfMovies) {
-	// 		var x = objectOfMovies.filter(filteringGenres);
-	// 		console.log("objectOfMovies", x);
-	// 		setArrayOfGenre();
-	// 	}
-	// };
-
 	return (
-		<div>
+		<BrowserRouter>
 			<div>
-				<BaseComponent />
+				<Switch>
+					<Route path="/home" exact component={BaseComponent}>
+						<BaseComponent />
+					</Route>
+					<Route path="/" exact>
+						<BaseComponent />
+					</Route>
+					<Route path="" exact>
+						<BaseComponent />
+					</Route>
+					<Route path="/movie/:id" exact component={Details}>
+						<Details />
+					</Route>
+				</Switch>
 			</div>
-		</div>
+		</BrowserRouter>
 	);
 };
 

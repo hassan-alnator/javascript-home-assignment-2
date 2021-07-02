@@ -1,4 +1,5 @@
 import React from "react";
+import { BrowserRouter, Link, Route, Switch } from "react-router-dom";
 import Container from "react-bootstrap/Container";
 import Navbar from "react-bootstrap/Navbar";
 import Form from "react-bootstrap/Form";
@@ -9,7 +10,9 @@ const Header = () => {
 	return (
 		<Navbar sticky="top" expand="lg" variant="dark" bg="dark">
 			<Container>
-				<Navbar.Brand href="#">Wookiee</Navbar.Brand>
+				<Link to="/home">
+					<Navbar.Brand>Wookiee</Navbar.Brand>
+				</Link>
 				<Form className="d-flex">
 					<Button className="mr-2" variant="outline-success">
 						Search{" "}
