@@ -1,9 +1,9 @@
 //Search
 //image-lazy-component || lazy load
 import React from "react";
-import { BrowserRouter, Link, Route, Switch } from "react-router-dom";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 import BaseComponent from "./components/base/Base";
-import Details from "./parts/details/details";
+import Details from "./parts/details/Details";
 import "./App.css";
 
 const App = () => {
@@ -14,15 +14,13 @@ const App = () => {
 					<Route path="/home" exact component={BaseComponent}>
 						<BaseComponent />
 					</Route>
-					<Route path="/" exact>
-						<BaseComponent />
-					</Route>
-					<Route path="" exact>
+					<Route path="/" exact component={BaseComponent}>
 						<BaseComponent />
 					</Route>
 					<Route path="/movie/:id" exact component={Details}>
 						<Details />
 					</Route>
+					<Route path="/:id" children={<Details />} />
 				</Switch>
 			</div>
 		</BrowserRouter>

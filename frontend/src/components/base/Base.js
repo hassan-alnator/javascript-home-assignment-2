@@ -22,9 +22,7 @@ const BaseComponent = () => {
 
 	return (
 		<div>
-			<div>
-				<Header />
-			</div>
+			<Header />
 			<div>
 				{movies ? (
 					<Genre movies={movies} genreArray={genreArray} />
