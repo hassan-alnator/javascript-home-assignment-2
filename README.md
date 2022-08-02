@@ -13,11 +13,13 @@ You are the owner of a movie theater in **Thikkiiana City,** on the Wookiee home
     -   Framework: **any framework**
 -   Build out the project to the designs inside the `/Designs` folder
 -   Connect your application to the **CodeSubmit Movie Database** at `https://wookie.codesubmit.io/movies`
--   For authentication pass the `"Authorization: Bearer Wookie2021"` header
+-   For authentication pass the `"Authorization: Bearer Wookie2021"` header , store the token safely !
 -   Parse the API response and display the results as outlined in the design. **Make sure to group movies by categories**.
 -   Implement a detail view for the movies in the list
 -   Make sure that inking to detail pages as well as bookmarking works as expected
 -   Implement search by connecting to `https://wookie.codesubmit.io/movies?q=<search_term>`
+-   Implement OAuth authentication using any provider you like but not Auth0.
+-   Add One Unit Test
 
 ### Deliverables
 
